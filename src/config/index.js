@@ -26,9 +26,9 @@ export const config = {
 
   // Configuration IA
   ai: {
-    model: process.env.AI_MODEL || 'llama-3.1-8b-instant',
-    maxTokens: parseInt(process.env.AI_MAX_TOKENS, 10) || 200,
-    temperature: parseFloat(process.env.AI_TEMPERATURE) || 0.75,
+    model: process.env.AI_MODEL || 'mixtral-8x7b-32768', 
+    maxTokens: parseInt(process.env.AI_MAX_TOKENS, 10) || 300,
+    temperature: parseFloat(process.env.AI_TEMPERATURE) || 0.7,
   },
 
   // Firebase
@@ -43,9 +43,16 @@ export const config = {
   },
 
   // CORS
-  cors: {
-    origins: process.env.CORS_ORIGINS?.split(',') || ['*'],
-  },
+cors: {
+  origins: process.env.CORS_ORIGINS?.split(',') || [
+    'https://ai-chat-23aa5.web.app',
+    'https://ai-chat-23aa5.firebaseapp.com',
+    'http://localhost:3000',
+    'http://localhost:8080',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8080'
+  ],
+},
 };
 
 /**
